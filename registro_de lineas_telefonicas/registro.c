@@ -11,12 +11,13 @@ struct LineaTelefonica {
     char operadora[20];
 };
 
-// Prototipos de Submódulos
+//Submódulos
 void mostrarDatosEstudiante();
 void registrarLinea(struct LineaTelefonica lista[], int *contador, int *sigID);
 void buscarLinea(struct LineaTelefonica lista[], int contador);
 void eliminarLinea(struct LineaTelefonica lista[], int *contador);
 
+// Modulo principal
 int main() {
     struct LineaTelefonica registros[100];
     int totalRegistros = 0;
@@ -25,8 +26,7 @@ int main() {
 
     
     mostrarDatosEstudiante();
-
- 
+    
     do {
         printf("\n--- MENU PRINCIPAL ---\n");
         printf("1. Lineas registradas (Nueva)\n");
@@ -49,7 +49,7 @@ int main() {
     return 0;
 }
 
-// Módulo Principal: 
+// Submódulo: Mostrar datos del estudiante  
 void mostrarDatosEstudiante() {
     printf("===================================================\n");
     printf("SISTEMA DE REGISTRO DE LINEAS TELEFONICAS\n");
