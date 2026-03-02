@@ -28,8 +28,9 @@ int main() {
     mostrarDatosEstudiante();
     
     do {
-        printf("\n--- MENU PRINCIPAL ---\n");
-        printf("1. Lineas registradas (Nueva)\n");
+        printf("\n                 MENU PRINCIPAL\n");
+        printf("===================================================\n");
+        printf("1. Lineas registradas\n");
         printf("2. Buscar linea\n");
         printf("3. Eliminar una linea\n");
         printf("4. Salir del sistema\n");
@@ -68,8 +69,12 @@ void registrarLinea(struct LineaTelefonica lista[], int *contador, int *sigID) {
     struct LineaTelefonica nueva;
     nueva.id = *sigID;
     
+    // Sub Modulo registrar linea 
+    printf("===================================================\n");    
+    printf("       REGISTRO DE NUEA LINEA TELEFONICA\n");
+    printf("===================================================\n");
     printf("\nID asignado: %d\n", nueva.id);
-    printf("CURP (18 caracteres): ");
+    printf("CURP (18 caracteres alfanumericos): ");
     scanf("%18s", nueva.curp);
     
     printf("Nombre completo: ");
@@ -77,7 +82,6 @@ void registrarLinea(struct LineaTelefonica lista[], int *contador, int *sigID) {
     fgets(nueva.nombre, 100, stdin);
     nueva.nombre[strcspn(nueva.nombre, "\n")] = 0;
 
-    // Validación de números para el teléfono
     do {
         printf("Numero de telefono (10 digitos): ");
         scanf("%10s", nueva.telefono);
@@ -91,7 +95,11 @@ void registrarLinea(struct LineaTelefonica lista[], int *contador, int *sigID) {
     lista[*contador] = nueva;
     (*contador)++;
     (*sigID)++;
+    printf("===================================================\n");
     printf("REGISTRO EXITOSO.\n");
+    printf("===================================================\n");
+    printf("Linea registrada: ID %d\n");
+
 }
 
 // Submódulo: Búsqueda 
